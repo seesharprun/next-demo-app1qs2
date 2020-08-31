@@ -1,12 +1,12 @@
-import Header from "../components/header";
-import Navigation from "../components/navigation";
-import Footer from "../components/footer";
+import Header from "./header";
+import Navigation from "./navigation";
+import Footer from "./footer";
 
-const Layout = (props) =>
+const Layout = ({ children }) =>
     <main>
         <Header />
         <Navigation />
-        {props.children}
+        {children}
         <Footer />
     </main>;
   

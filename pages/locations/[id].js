@@ -1,6 +1,8 @@
 require("linqjs")
 import Layout from "../../components/layout";
-import Locations from "../data.json"
+import Board from "../../components/board";
+import Check from "../../components/check";
+import Locations from "../data.json";
 
 const Index = ({ location }) =>
     <Layout>
@@ -53,16 +55,16 @@ const getTable = (location) =>
                         {room.seats}
                     </td>
                     <td>
-                        {room.privateFacilities ? getCheck() : ( <></> )}
+                        {room.privateFacilities ? <Check /> : ( <></> )}
                     </td>
                     <td>
-                        {room.phoneIncluded ? getCheck() : ( <></> )}
+                        {room.phoneIncluded ? <Check /> : ( <></> )}
                     </td>
                     <td>
-                        {room.windows ? getCheck() : ( <></> )}
+                        {room.windows ? <Check /> : ( <></> )}
                     </td>
                     <td>
-                        {room.corner ? getCheck() : ( <></> )}
+                        {room.corner ? <Check /> : ( <></> )}
                     </td>
                 </tr>
             ))}
@@ -78,28 +80,9 @@ const getDetails = (location) =>
             {location.mailingAddress}
         </p>
         <div className="my-2">
-            {getBlock(location.parkingIncluded, 'fa-car', 'Parking included', 'No parking available')}                            
-            {getBlock(location.conferenceRoomsIncluded, 'fa-suitcase', 'Conference rooms available', 'No conference rooms')}
-            {getBlock(location.receptionIncluded, 'fa-phone', 'Reception services provided', 'No reception services')}
-            {getBlock(location.publicAccess, 'fa-building', 'Public access available', 'No public access')}
+            <Board location={location} />
         </div>
     </div>;
-
-const getBlock = (indicator, symbol, success, failure) =>
-    <div className="row">
-        <i className={`fa-stack fa-lg col-sm-2 text-center ${indicator ? '' : 'text-muted'}`}>
-            <i className="fa fa-circle fa-stack-2x" />
-            <i className={`fa ${symbol} fa-stack-1x text-dark`} />
-        </i>
-        {indicator ? getCheck() : <span className="col-sm-2"></span>}
-        <span className="col-sm-8 text-center">
-            {indicator ? success : failure}
-        </span>
-    </div>;
-
-const getCheck = () =>
-    <i className="fa fa-check text-success fa-2x col-sm-2 text-center" aria-hidden="true">        
-    </i>;
 
 export const getServerSideProps = async (context) =>
 {
