@@ -70,7 +70,6 @@ const chunkArray = (items, size) => {
             locations: items.splice(0, 2)
         });
     }
-    console.dir(results);
     return results;
 }
 
