@@ -1,13 +1,13 @@
 import Header from "../components/header";
 import Navigation from "../components/navigation";
+import Footer from "../components/footer";
 
 const Layout = (props) =>
     <main>
         <Header />
         <Navigation />
-        <article className="container py-2">
-           {props.children}
-        </article>
+        {props.children}
+        <Footer />
     </main>;
   
 export default Layout
