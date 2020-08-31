@@ -1,6 +1,6 @@
 import Layout from "../../components/layout";
 
-const Index = ({ locations }) =>
+const Index = () =>
     <Layout>
         <h1 className="display-1">
             All Locations

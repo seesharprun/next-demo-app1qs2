@@ -9,7 +9,7 @@ const Footer = () =>
                         <i className="fa fa-circle-o-notch fa-stack-2x"></i>
                         <i className="fa fa-building-o fa-stack-1x"></i>
                     </i>
-                    <span class="ml-2">
+                    <span className="ml-2">
                         Contoso Spaces
                         &copy; 2020
                     </span>
@@ -33,7 +33,7 @@ const Footer = () =>
             </ul>
             <a href="https://github.com/msusdev/introduction-to-github-actions-template" target="_blank" className="btn btn-secondary">
                 <i className="fa fa-github" aria-hidden="true"></i>
-                <span class="ml-1">
+                <span className="ml-1">
                     GitHub
                 </span>
             </a>
